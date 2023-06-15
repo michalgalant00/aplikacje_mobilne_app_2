@@ -60,7 +60,7 @@ class _PhonesScreenState extends State<PhonesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: const Text('Telefony'),
         centerTitle: true,

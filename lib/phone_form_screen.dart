@@ -29,6 +29,15 @@ class PhoneScreenState extends State<PhoneScreen> {
   bool modelFocused = false;
   bool softVersionFocused = false;
 
+  // void pickImageClick() async {
+  //   XFile? image = await imagePicker.pickImage(source: ImageSource.gallery);
+  //   setState(() {
+  //     if (image != null) {
+  //       avatarPathController.text = image.path;
+  //     }
+  //   });
+  // }
+
   void pickImageClick() async {
     XFile? image = await imagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
@@ -37,6 +46,7 @@ class PhoneScreenState extends State<PhoneScreen> {
       }
     });
   }
+
 
   void savePhone() async {
     final producer = producerController.value.text;
@@ -116,7 +126,7 @@ class PhoneScreenState extends State<PhoneScreen> {
       if (producerFocusNode.hasFocus != producerFocused) {
         producerFocused = producerFocusNode.hasFocus;
         String? validateResult =
-            validateProducerNotEmpty(producerController.text);
+        validateProducerNotEmpty(producerController.text);
         if (!producerFocused && validateResult != null) {
           showSnackBar(validateResult);
         }
@@ -139,7 +149,7 @@ class PhoneScreenState extends State<PhoneScreen> {
       if (softVersionFocusNode.hasFocus != softVersionFocused) {
         softVersionFocused = softVersionFocusNode.hasFocus;
         String? validateResult =
-            validateSoftVersionNotEmpty(softVersionController.text);
+        validateSoftVersionNotEmpty(softVersionController.text);
         if (!softVersionFocused && validateResult != null) {
           showSnackBar(validateResult);
         }
@@ -206,7 +216,9 @@ class PhoneScreenState extends State<PhoneScreen> {
                       SizedBox(
                         width: 160,
                         height: 160,
-                        child: Image.file(File(avatarPathController.text)),
+                        child: avatarPathController.text.isNotEmpty
+                            ? Image.file(File(avatarPathController.text))
+                            : Container(),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 14.0),

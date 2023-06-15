@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'phone_model.dart';
 
+
 class PhoneWidget extends StatelessWidget {
   final Phone phone;
   final VoidCallback deleteClick;
   final VoidCallback editClick;
 
-  const PhoneWidget(
-      {Key? key,
-      required this.phone,
-      required this.deleteClick,
-      required this.editClick})
+  const PhoneWidget({Key? key,
+    required this.phone,
+    required this.deleteClick,
+    required this.editClick})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
-        color: Color.fromARGB(255, 5, 202, 22),
+        color: const Color.fromARGB(255, 167, 224, 255),
         margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
         child: ListTile(
           title: Text(phone.producer),
