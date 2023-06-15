@@ -29,15 +29,6 @@ class PhoneScreenState extends State<PhoneScreen> {
   bool modelFocused = false;
   bool softVersionFocused = false;
 
-  // void pickImageClick() async {
-  //   XFile? image = await imagePicker.pickImage(source: ImageSource.gallery);
-  //   setState(() {
-  //     if (image != null) {
-  //       avatarPathController.text = image.path;
-  //     }
-  //   });
-  // }
-
   void pickImageClick() async {
     XFile? image = await imagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
@@ -160,9 +151,9 @@ class PhoneScreenState extends State<PhoneScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text(widget.phone == null ? 'Dodaj telefon' : 'Edytuj telefon'),
-        centerTitle: true,
       ),
       body: Center(
         child: Padding(
@@ -237,7 +228,7 @@ class PhoneScreenState extends State<PhoneScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: savePhone,
-        tooltip: 'AddOrEdit',
+        tooltip: 'Zatwierdź dane',
         child: const Icon(Icons.done),
       ),
     );

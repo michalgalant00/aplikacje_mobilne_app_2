@@ -62,8 +62,7 @@ class _PhonesScreenState extends State<PhonesScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text('Telefony'),
-        centerTitle: true,
+        title: const Text('Twoje telefony'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {

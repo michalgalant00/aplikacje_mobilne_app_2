@@ -16,6 +16,8 @@ class PhoneWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: editClick,
+      onDoubleTap: deleteClick,
       child: Card(
         color: const Color.fromARGB(255, 167, 224, 255),
         margin: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
